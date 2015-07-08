@@ -1,9 +1,21 @@
 $(document).ready(function(){
-	alert('Hello');
 	// слайдер в промоблоке
 	$('.promo__slider').carousel({
         interval: 5000 
 		});
+	// анкор в промо
+	$('a.promo__anchor').click(function(){
+        var el = $(this).attr('href');
+        if ($(window).width() > 991) {
+        $('body').animate({
+            scrollTop: $(el).offset().top-209}, 500);
+        return false; 
+    } else {
+    	 $('body').animate({
+            scrollTop: $(el).offset().top}, 500);
+        return false; 
+    }
+  });
 	
 	// слайдеры в кмендуем посмотреть. 
 	// странно работают с промо-слайдерм, поэтому в разных обертках
@@ -65,14 +77,11 @@ $(document).ready(function(){
     	$(window).scroll(function(){
        		var top = $(this).scrollTop();
        		var elem = $('.main-nav');
-       		if (top+h_mrg > h_hght) {
-        	elem.addClass('fixed');
+		if (top+h_mrg > h_hght) {
+        	elem.css('background', 'rgba(0,0,0,0.7)');
        			} else {
-        	elem.removeClass('fixed');
+        	elem.css('background', 'rgba(0,0,0,0.0)');;
        		}
      	});
    	});
-   	// мобильное меню
-  
-
 });

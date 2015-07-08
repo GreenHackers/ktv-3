@@ -13,22 +13,60 @@
 	<link rel="stylesheet" type="text/css" href="components/fonts/css/fontello.css"/>
 	<link rel="stylesheet" type="text/css" href="components/stylesheets/screen.css">
 	<link href="components/js/full-slider/css/full-slider.css" rel="stylesheet">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 	<script type="text/javascript" src="components/js/jquery-1.11.3.js"></script>
 	<script src="components/js/script.js"></script>
 	<script type="text/javascript" src="components/js/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="components/js/jquery.fancybox-buttons.js"></script>
 	<script src="components/js/full-slider/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="components/js/slick.js"></script>
-	<script type="text/javascript" src="components/js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="components/js/pushy.js"></script>
 </head>
 <body>
 	<header>
+	<nav class="pushy pushy-left">
+	<ul>
+            <li><a href="#">Форум</a></li>
+            <li><a href="#">Личный кабинет</a></li>
+            <li><p>	Для частных лиц</p>
+				 <ul>
+                    <li><a href="#">Интернет</a></li>
+                    <li><a href="#">ТВ</a></li>
+                    <li><a href="#">Пакеты</a></li>
+                    <li><a href="#">Оплата</a></li>
+                </ul>
+            </li>
+            <li><p>	ЖСК и ТСЖ</p>
+				 <ul>
+                    <li><a href="#">Домофоны и виденаблюдение</a></li>
+                    <li><a href="#">Обслуживание СКТ</a></li>
+                </ul>
+            </li>
+            <li><p>	Дополнительно </p>
+                <ul>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Документы</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Новости</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
+    <!-- Site Overlay -->
+<div class="site-overlay"></div>
+
+<!-- Your Content -->
+<div id="container">
+    <!-- Menu Button -->
+    <div class="menu-btn">&#9776;</div>
+</div>
+<div class="all-navigation__wrapper">
 			<!-- somit -->
-			<div class="somit">
+			<div class="somit hidden-xs hidden-sm">
 				<div class="container clearfix">
 					<ul id="office" class="pull-teft office-links">
-						<li> <span class="mobile-text">Дополнительно</span> <ul class="somit-menu">
+						<li><ul class="somit-menu">
 							<li class="somit-menu__item"><a href="#">О компании</a></li>
 							<li class="somit-menu__item"><a href="#">Документы</a></li>
 							<li class="somit-menu__item"><a href="#">Вакансии</a></li>
@@ -39,15 +77,15 @@
 						<li><a href="#" class="base-link">Личный кабинет</a></li> 
 					</ul>
 					<div class="pull-right call-wrap">
-						<a class="base-link tel" href="tel:6771515"><i class="icon icon-phone"></i> 677 15 15</a>
-						<a class="base-link" href="#">Заказать звонок</a>
+						<a class="base-link tel" href="tel:6771515">677 15 15</a>
+						<a class="base-link modal-call" href="#modalForm">Заказать звонок</a>
 					</div>
 				</div>
 			</div>
 			<!-- /.somit, .main-nav -->
-		<div class="main-nav clearfix">
+		<div class="main-nav clearfix hidden-xs hidden-sm">
 		<div class="container">
-			<div class="logo"><a href="#"><img src="components/icons/logo_big.jpg" alt="Логотип"></a></div>
+			<div class="logo"><a href="#"><img src="components/icons/logo150.jpg"alt="Логотип"></a></div>
 					<ul class="main-nav__filter">
 						<li class="main-nav__filter-item main-nav__filter-item--personal"><a href="#">Для частных лиц</a></li>
 						<li class="main-nav__filter-item main-nav__filter-item--gsk"><a href="#">ЖСК и ТСЖ</a></li>
@@ -98,9 +136,13 @@
 		</div>
 		<!-- /.main-nav -->
 	</div>
+	</div>
 
 			<!-- /.main-nav, promo-slider -->
 <div class="promo">
+<!-- anchor button -->
+<a href="#features" class="promo__anchor"></a>
+<!-- /.anchor buton -->
 	<div id="myCarousel" class="promo__slider carousel slide">
    
         <div class="carousel-inner">
@@ -110,7 +152,7 @@
                 <div class="container">	
                  <div class="promo__info">
 					<p class="title promo__title">Теперь можно расслабиться</p>
-					<p class="promo__description">Когда другие отключают интернет за неуплату, мы уверены в своих клиентах. Платите, когда удобно, интернет р</p>
+					<p class="promo__description">Когда другие отключают интернет за неуплату, мы уверены в своих клиентах. Платите, когда удобно, интернет работает всегда.</p>
 				<div class="carousel-caption"></div>
                 </div>
             	</div>
@@ -118,11 +160,11 @@
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background:url('components/img/hammock-bg-blur.jpg') no-repeat center;">
+                <div class="fill" style="background:url('components/img/family-bg.jpg') no-repeat center;">
                 <div class="container">	
                 	<div class="promo__info">
-					<p class="title promo__title">Теперь можно расслабиться</p>
-					<p class="promo__description">Когда другие отключают интернет за неуплату, мы уверены в своих клиентах. Платите, когда удобно, интернет р</p>
+					<p class="title promo__title">Цифровое телевидение</p>
+					<p class="promo__description">Ресивер для просмотра цифрового телевидения - бесплатно. Каналы высокой четкости без дополнительной платы. Работает всегда, даже если забыли оплатить.</p>
 				<div class="carousel-caption"></div>
 				</div>
                 </div>
@@ -142,7 +184,7 @@
 	</header>
 	<!-- /header -->
 	<main>
-		<div class="features">
+		<div id="features" class="features">
 			<div class="container">
 				<div class="row">
 					<div class="item-4">
@@ -158,26 +200,29 @@
 					</section>
 					</div>
 					<div class="item-4">
-					<section class="features__item">
-						<img src="components/img/people01.jpg"alt="">
-						<p class="features__item-title">Доступный интернет</p>
+					<section class="features__item features__item--hit">
+					<div class="hit">Хит</div>
+						<img src="components/img/people02.jpg"alt="">
+						<p class="features__item-title">Будь в курсе</p>
 						<ul class="features__item-lead">
-							<li>10-20  Мбит/с за <span class="mark">250</span> рублей</li>
-							<li>10-30  Мбит/с за <span class="mark">350</span> рублей</li>
+							<li>Интернет + ТВ</li>
+							<li>До 100 Мбит/с за <span class="mark">350</span> рублей *</li>
 						</ul>
 						<p class="features__item-content">Телевидение на все ТВ приемники и высокоскоростной интернет, который работает всегда, даже если забыли оплатить.</p>
+						<p class="features__item-small"> * Цена действительна для новых абонентов в течении первых 6и месяцев, с 7го месяца абонентская плата 450рублей</p>
 						<a class="btn" href="">Подключиться</a>
 					</section>
 					</div>
 					<div class="item-4">
 					<section class="features__item">
-						<img src="components/img/people01.jpg"alt="">
-						<p class="features__item-title">Доступный интернет</p>
+						<img src="components/img/people03.jpg"alt="">
+						<p class="features__item-title">Все и сразу</p>
 						<ul class="features__item-lead">
-							<li>10-20  Мбит/с за <span class="mark">250</span> рублей</li>
-							<li>10-30  Мбит/с за <span class="mark">350</span> рублей</li>
+							<li>Интернет + ТВ + Цифровое ТВ</li>
+							<li>До 100 Мбит/с за <span class="mark">532</span> рубля</li>
 						</ul>
-						<p class="features__item-content">Телевидение на все ТВ приемники, цифровой ресивер для просмотра телевидения высокой четкости и высокоскоростной интернет.</p>
+						<p class="features__item-content">Телевидение на все ТВ приемники, цифровой ресивер для просмотра телевидения высокой четкости и высокоскоростной интернет, который работает всегда, даже если забыли оплатить.</p>
+						<p class="features__item-small"> * Цена действительна для новых абонентов в течении первых 6и месяцев, с 7го месяца абонентская плата 450рублей</p>
 						<a class="btn" href="">Подключиться</a>
 					</section>
 					</div>
@@ -336,8 +381,8 @@
 				<div class="footer">
 					<span class="social social-title">Мы соцмедиа</span>
 					<ul class="social">
-						<li><a href="#"><i class="icon icon-vkontakte-rect"></i></a></li>
-						<li><a href="#"><i class="icon icon-facebook-rect"></i></a></li>
+						<li><a href="#"><i class="icon custom-vkontakte"></i></a></li>
+						<li><a href="#"><i class="icon custom-facebook"></i></a></li>
 					</ul>
 				</div>
 		

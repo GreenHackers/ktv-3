@@ -1,4 +1,4 @@
-div {outline: 1px blue dashed;}
+
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -13,9 +13,7 @@ div {outline: 1px blue dashed;}
    }
 @import "normalize";
 // slicknav style
-@import "slicknav.scss";
-@import "core.scss";
-@import "theme.scss";
+@import "pushy";
 // base
 html, body {
 	width:100%;
@@ -75,7 +73,9 @@ a{
 		}	
 	}
 }
-
+.menu-btn{
+	display: none;	
+}
 .pull-teft{
 	float: 	left;
 }
@@ -89,6 +89,7 @@ a{
 	text-align: center;	
 	line-height: 60px;
 	border-bottom: 	1px solid #fff;	
+	margin-bottom: 25px;
 }
 .mark{
 	color: #ff3333;
@@ -108,7 +109,7 @@ a{
 	box-sizing: border-box;		
 	margin: 0 auto;	
 	&--small{
-		width: 965px;	
+		max-width: 965px;	
 	}
 }
 .row, .wrap{
@@ -166,13 +167,17 @@ header{
 		padding: 15px 0;
 		font-size: 20px;
 		background-color: #000;
+		margin-bottom: 0;
 		.office-links li{
 			display: inline-block;	
 		}
 		.base-link{
 			display: inline-block;	
-			padding: 0 10px;
-			box-sizing: border-box;	
+			margin: 0 10px;
+			box-sizing: border-box;
+			&:active, &:link{
+				text-decoration: none;
+			}	
 		}
 		&-menu{
 			display: none;	
@@ -183,7 +188,9 @@ header{
   			padding: 70px 40px;
   			width: 280px;
   			top: 59px;
-  			&__item a{
+  			&__item {
+				display: block!important;	
+  				a{
   				display: inline-block;	
   				color: #fff;
   				line-height: 30px;	
@@ -193,6 +200,7 @@ header{
   					opacity: 0.8;
   				}
   			}
+  			}
 		}
 		.dropdoun{
 			color: #fff;
@@ -200,8 +208,33 @@ header{
 	}
 }
 .promo{
+	position: relative;	
+	&__anchor{
+		position: absolute;
+  		height: 120px;
+  		width: 100%;
+  		display: inline-block;
+  		bottom: 0;
+  		left: 0;
+  		right: 0;
+  		background: rgba(255, 255, 255, 0.15) url(../icons/arrow-slide-bottom.png) center no-repeat;
+  		z-index: 4;
+	}
 	.carousel-inner{
 	min-height: 930px;
+				.carousel-control{
+			.icon-next:before, .icon-prev:before{
+				content:'';
+				width: 22px;	
+				height: 71px;
+			} 
+			.icon-next:before{
+				background: url(../icons/arrow-slide-right.png) no-repeat;	
+			}
+			.icon-prev:before{
+				background: url(../icons/arrow-slide-left.png) no-repeat;	
+			}
+		}
 	.item{
 		height: 100%;	
 		min-height: 930px;
@@ -212,9 +245,10 @@ header{
 	}
 }
 	&__info{
-		text-align: center;	
+		text-align: left;	
 		padding-top: 285px;
-  		width: 730px;
+  		width: 100%;
+  		max-width: 730px;
   		margin: 0 auto;
 
 	}
@@ -223,12 +257,18 @@ header{
 	}
 
 }
-// ***********main-mav**************
+// ***********nav**************
+.all-navigation__wrapper{
+	position: fixed;
+	top: 0;
+	z-index: 4;
+	width: 100%;
+}
 .main-nav{
 	min-height: 125px;
 	position: absolute;
 	width: 100%;	
-	top: 60px;
+	top: 59px;
 	left: 0;	
 	right: 0;	
 	margin: 0 auto;	
@@ -246,11 +286,6 @@ header{
 		  	}
 		  }
 	
-	&.fixed{
-		position: fixed;
-		top: 0;
-		background:	rgba(0,0,0,0.5);
-	}
 	.logo{
 		float: 	left;
 		display: inline-block;	
@@ -317,7 +352,31 @@ header{
 		padding: 25px;
 		background-color: #fff;
 		position: relative;	
-		min-height: 640px;	
+		min-height: 640px;
+		overflow: hidden;
+		position: relative;
+		&--hit .hit{
+			position: absolute;
+			text-align: center;
+			display: inline-block;
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #ef3125;
+			color: #fff;
+			top:25px;
+			font-size: 22px;
+			font-weight: bold;
+			left: -47px;
+			-moz-transform: rotate(-45deg);
+    		-ms-transform: rotate(-45deg);
+    		-webkit-transform: rotate(-45deg);
+    		-o-transform: rotate(-45deg); 
+    		transform: rotate(-45deg);
+		}	
+		img{
+			width: 100%;	
+		}
 		&-title, &-lead{
 			font-size: 22px;	
 		}
@@ -327,10 +386,26 @@ header{
 		}
 		&-lead{
 			border-bottom: 1px solid #000;
-			padding: 15px 0;	
+			padding-bottom:10px;
+			padding-top: 5px;	
+			.mark{
+				font-weight: bold;
+			}
 		}
 		&-content{
-			padding: 15px 0;
+			padding: 10px 0;
+		}
+		&-small{
+			position: absolute;
+			width: 90%;
+			max-width: 312px;
+			bottom: 95px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			height: 50px;
+			font-size: 12px;
+			font-weight: bold;
 		}
 		.btn{
 			position: absolute;
@@ -346,7 +421,7 @@ header{
 }
 // callback-info
 .modal-form{
-		width: 490px;
+		max-width: 490px;
 		display: none;	
 		text-align: center;	
 		height: 485px;	
@@ -538,9 +613,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3125', end
 	background-color: #333333;
 	text-align: center;
 	.social{
+		margin-top: 10px;
 		font-size: 	22px;
 		display: block;
-		opacity: 0.5;
+		opacity: 0.3;
 		li{
 			display: inline-block;	
 			a{
@@ -549,14 +625,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3125', end
 		}
 	}
 	.icon{
-		font-size: 35px;	
+		display: block;
+		width: 33px;
+		height: 33px;
+		background: url(../icons/sprite-social.png) no-repeat;	
+	}
+	.custom-vkontakte{
+		background-position: 0 0;
+	}
+	.custom-facebook{
+		background-position: -46px 0;
 	}
 
 }
 // inner
 .inner{
 	min-height: 900px;
-	padding-top: 180px;
+	padding-top: 245px;
 	padding-bottom: 40px;	
 	box-sizing: border-box;	
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#186c76+0,c8a761+100 */
@@ -591,9 +676,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		}
 		a{
 			color: 	#000;
-			text-decoration: underline;	
+			border: 1px dotted #fff;
+			border: none;	
 			&:hover{
 				text-decoration: none;
+				border: none;
 			}
 		}
 	}
@@ -601,6 +688,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		font-size: 20px;	
 		font-weight: bold;	
 	}
+	.item-narrow{
+		margin-left: 0;
+	}
+	.margin-bottom: 20px;
 }
 .breadcrumbs{
 	font-size: 20px;	
@@ -641,6 +732,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 	}
 
 }
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px){
+.menu-btn{
+	display: inline-block;	
+	position: fixed;
+  	z-index: 5;
+  	top: 10px;
+  	left: 10px;
+  	font-size: 30px;
+  	color: #85C3BC;
+	}
+}
+
 @media only screen and (max-width: 900px), only screen and (max-device-width: 900px){
 	.row, .wrap{
 	.item-4.mobile-12{
@@ -650,59 +753,93 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		}
 	.features{
 		&__item{
+			padding: 10px;	
+			text-align: center;	
+			.btn{
+				padding: 10px;	
+			}
 			img{
 				display: block;	
 				margin: 0 auto;
+				width: 100%;	
 			}
 			
 		}
 	}
-	.main-nav{
-		width: 50%;
-  		top: 0;
-  		left: 0;
- 	 	margin: 0;
- 	 	min-height: 60px;
- 	 	line-height: 60px;
- 	 	vertical-align: top;
-  		.container{
- 	 		width: 100%;	
-  		}
-  		.logo{
-  			width: 40px;	
-  			img{
-  				width: 40px;
-  				height: 40px;	
-  			}
-  		}
-  		&__filter{
-  			display: none;
-  		}
-  		&__inner{
-  			font-size: 20px;	
-  			float: 	left;
-  			text-align: left;
-  			.custom-icon{
-  				display: none;	
-  			}	
-  		}
-	}
-	header .somit{
-		position: fixed;
-  		box-sizing: border-box;
-  		padding: 15px 0;
-  		font-size: 20px;
-  		background-color: transparent;
-  		top: 0;
-  		right: 0;
-  		width: 50%;
-  		z-index: 15;
-  		.call-wrap{
-  			display: none;	
-  		}
-  		.mobile-text{
-  			display: inline;	
-  		}
-	}
 }
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px){
+	.row{
+		width: auto;
+		.item-4{
+			width: 100%;
+			margin-bottom: 20px;	
+		}
+	}
+	.features{
+		&__item{
+			img{
+				width: 100%;	
+			}
+		}
+	}
+	.title{
+		font-size: 36px;
+  		line-height: 47px;
+  		padding-bottom: 10px;		
+	}
+	.callback-info__nude {
+  		font-size: 22px;
+  		line-height: 36px;
+  		margin-top: 20px;
+	}
+	.callback-info{ 
+		.lead-link{
+			margin-top: 20px;	
+		}
+		.btn{
+			padding: 15px;	
+			margin-top: 30px;	
+		}
+		.title{
+			width: 80%;
+		}
+	}
+	.recommend{
+		display: none;	
+	}
+	.promo{
+		.carousel-inner{
+			max-height: 630px;
+			min-height: inherit;
+
+		}
+		&__info{
+			padding-top: 201px;
+  			width: 76%;
+		}
+		&__description{
+			  font-size: 20px;
+		}
+	}
+	.modal__description {
+  		font-size: 20px;
+	}
+	.inner{
+		padding-top: 80px;	
+		.wrap{
+			.item-narrow{
+				display: none;	
+			}
+			.item-hide{
+				width: 100%;	
+				font-size: 16px;	
+			}
+		}
+	}
+	.callback-info{
+		padding: 100px 0;	
+	}
+
+}
+
 
