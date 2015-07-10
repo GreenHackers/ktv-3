@@ -11,6 +11,7 @@
     font-family: "Roboto Light"; /* Имя шрифта */
     src: url(../fonts/Roboto_Light.ttf); /* Путь к файлу со шрифтом */
    }
+
 @import "normalize";
 // slicknav style
 @import "pushy";
@@ -503,28 +504,54 @@ header{
 		height: 450px!important;	
 	}
 	.slick-prev, .slick-next {
-		top: 116%;	
+		height: 100%;
+  		width: 10%;
+  		top: 0;	
+  		margin-top: 0;
+  		cursor: pointer;
 		&:before{
 			content:'';
-			background: url(../icons/arrows.png) no-repeat;
-			height: 21px;	
-			width: 25px;	
+			height: 100%;	
+			width: 100%;	
 			display: inline-block;	
 		}
 	}
 	.slick-next{
-		left: 915px;
+		left: 90%;
 		
-		&:before{
-		background-position-x: -45px;	
+			&:before{
+				cursor: pointer;
+
+background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(../icons/arrow-small-next3.png) no-repeat center; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5))), url(../icons/arrow-small-next3.png) no-repeat center; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%), url(../icons/arrow-small-next3.png) no-repeat center; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%), url(../icons/arrow-small-next3.png) no-repeat center; /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%), url(../icons/arrow-small-next3.png) no-repeat center; /* IE10+ */
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%), url(../icons/arrow-small-next3.png) no-repeat center; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-8 */
+
 		}
 	}
 	.slick-prev{
-		left: 890px;	
+		left: 0;
+				&:before{
+					cursor:pointer;
+
+background: -moz-linear-gradient(left,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url(../icons/arrow-small-prev3.png) no-repeat center; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0))), url(../icons/arrow-small-prev3.png) no-repeat center; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%), url(../icons/arrow-small-prev3.png) no-repeat center; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%), url(../icons/arrow-small-prev3.png) no-repeat center; /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%), url(../icons/arrow-small-prev3.png) no-repeat center; /* IE10+ */
+background: linear-gradient(to right,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%), url(../icons/arrow-small-prev3.png) no-repeat center; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-8 */
+
+
+		}
+
 	}
 	// content
 	&__content{
-	height: 610px;
+	max-height: 495px;
   	padding-top: 45px;
   	&-item{
   		display: none;	
@@ -590,12 +617,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3125', end
 
 }
 .somit-caption{
-	  min-height: 125px;
-	box-sizing: border-box;	
-	padding: 50px 0;	
-  	background-color: #e1e1e1;
-  	font-size: 22px;	
-  	color: #000;
+	//   min-height: 125px;
+	// box-sizing: border-box;	
+	// padding: 50px 0;	
+ //  	background-color: #e1e1e1;
+ //  	font-size: 22px;	
+ //  	color: #000;
+   position: absolute;
+  z-index: 3;
+  display: inline-block;
+  width: 100%;
+  min-height: 40px;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 10px 20px;
 
   	&__title{
   		font-weight: bold;	
@@ -603,7 +638,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3125', end
   	padding: 5px;	
   	}
   	&__info{
-  		border-left: 1px solid #000;
+  		border-left: 1px solid #fff;
   		display: inline-block;	
   		padding: 5px;	
   	}
@@ -706,7 +741,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		}
 	}
 }
-@media (min-width: 901) and (max-width: 1170px), (min-device-width: 901px) and (max-device-width: 1170px){
+@media (min-width: 901) and (max-width: 1199px), (min-device-width: 901px) and (max-device-width: 1199px){
 	.promo .carousel-inner{
 		min-height: 630px;
 		
@@ -719,6 +754,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 	}
 	.features{
 		&__item{
+
 			img{
 				width: 100%;
 			}
@@ -743,6 +779,55 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
   	color: #85C3BC;
 	}
 }
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px){
+	.features__item{
+		min-height: 725px;
+	}
+}
+
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px){
+	.custom-icon {
+  	display: inline-block;
+  	width: 40px;
+  	height: 35px;
+  	background-image: url(../icons/sprite.png);
+  	background-size: 695% 110%;
+  	background-repeat: no-repeat;
+  	&--inet{
+  		background-position: -17px -4px;
+  	}
+  	&--tv{
+  		background-position: -64px -5px;
+  	}
+  	&--pack{
+  		background-position: -106px -2px;
+  	} 
+  	&--pay{
+  		background-position: -241px -2px;
+  	}
+  	 &--intercom{
+  		background-position: -195px 0px;
+  	}
+  	 &--skt{
+  		background-position: -149px 2px;
+  	}
+
+	}
+	.logo img{
+		height: 100px;	
+	}
+	.main-nav{
+		max-height: 100px;
+		min-height: 100px;
+		&__filter{
+			padding: 15px 0px 15px 25px;
+  			background-position: 204px 9px;
+		}
+		&__list-item a{
+			font-size: 16px;
+		}
+	}
+}
 
 @media only screen and (max-width: 900px), only screen and (max-device-width: 900px){
 	.row, .wrap{
@@ -755,6 +840,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		&__item{
 			padding: 10px;	
 			text-align: center;	
+			min-height: 700px;
 			.btn{
 				padding: 10px;	
 			}
@@ -777,6 +863,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 	}
 	.features{
 		&__item{
+			min-height: auto;
+			&-content{
+				margin-bottom: 	135px;
+			}
 			img{
 				width: 100%;	
 			}
@@ -811,10 +901,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		.carousel-inner{
 			max-height: 630px;
 			min-height: inherit;
+			.item{
+				min-height: 630px;
+			}
+			.fill{
+				background-size: cover!important;
+				min-height: 630px;
+			}
 
 		}
 		&__info{
-			padding-top: 201px;
+			padding-top: 100px;
   			width: 76%;
 		}
 		&__description{
