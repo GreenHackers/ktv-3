@@ -1,4 +1,38 @@
+		// // плагин табов
+		// (function( $ ) {
+  // $.fn.customTabs = function() {
+  // 		   var createTabs = function(){
+  //           tabs = this;
+  //           i = 0;
+            
+  //           showPage = function(i){
+  //               $(tabs).find('.query-content').hide();
+  //               $(tabs).find('.query-content').eq(i).show();
+  //               $(tabs).find('.query-tabs').children("li").css('border-bottom-color', '#e1e1e1');
+  //               $(tabs).find('.query-tabs').children("li").eq(i).css('border-bottom-color', '#d4261b');
+  //           }
+                                
+  //           showPage(0);				
+            
+  //           $(tabs).find('.query-tabs').children('li').each(function(index, element){
+  //               $(element).attr("data-page", i);
+  //               i++;                        
+  //           });
+            
+  //           $(tabs).find('.query-tabs').children('li').click(function(){
+  //               showPage(parseInt($(this).attr("data-page")));
+  //           });				
+  //       };		
+  //       return this.each(createTabs);
+     
+
+  // 		};
+		// })(jQuery);
+
+
 $(document).ready(function(){
+	// // подключаю табы
+	//  $(".recommend").customTabs();
 	// слайдер в промоблоке
 	$('.promo__slider').carousel({
         interval: 5000 
@@ -31,24 +65,26 @@ $(document).ready(function(){
      $('.modal-call').click(function(e){
      	e.preventDefault();
      });
-  	// отработка табов в рекмендуемых
+   //отработка табов в рекмендуемых
   	$('.recommend__content-item.cinema').show();
-		$('.recommend-tabs__item a').on('click', function(e){
-		e.preventDefault();
-		var $tab = $(this).parent('.recommend-tabs__item');
-		$('.recommend-tabs__item').not($tab && '.recommend-tabs__item-title').css('border-bottom-color', '#e1e1e1');
-			$tab.css('border-bottom-color', '#d4261b');
-		if( $tab.hasClass('cinema')){
-			$('.recommend__content-item').hide();
-			$('.recommend__content-item.cinema').show();
-		} else if( $tab.hasClass('sport')){
-			$('.recommend__content-item').hide();
-			$('.recommend__content-item.sport').show();
-		} else if( $tab.hasClass('cognition')){
-			$('.recommend__content-item').hide();
-			$('.recommend__content-item.cognition').show();
-		}
-	});
+  	$('.recommend-tabs__item.cinema').css('border-bottom-color', '#d4261b');
+	 	$('.recommend-tabs__item a').on('click', function(e){
+	 	e.preventDefault();
+	 	var $tab = $(this).parent('.recommend-tabs__item');
+	 	$('.recommend-tabs__item').not($tab && '.recommend-tabs__item-title').css('border-bottom-color', '#e1e1e1');
+	 		$tab.css('border-bottom-color', '#d4261b');
+	 	if( $tab.hasClass('cinema')){
+	 		$('.recommend__content-item').hide();
+	 		$('.recommend__content-item.cinema').show();
+	 	} else if( $tab.hasClass('sport')){
+	 		$('.recommend__content-item').hide();
+	 		$('.recommend__content-item.sport').show();
+	 	} else if( $tab.hasClass('cognition')){
+	 		$('.recommend__content-item').hide();
+	 		$('.recommend__content-item.cognition').show();
+	 	}
+	 });
+
   	// дропдаун клевой верхней кнопке с доп-меню
     $('.dropdoun').click(function(e){
      	e.preventDefault();

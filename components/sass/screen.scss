@@ -627,6 +627,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3125', end
   z-index: 3;
   display: inline-block;
   width: 100%;
+  min-width: 700px;
   min-height: 40px;
   bottom: 0;
   box-sizing: border-box;
