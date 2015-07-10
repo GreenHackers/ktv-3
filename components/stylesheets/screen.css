@@ -1752,105 +1752,110 @@ header .somit .dropdoun {
 }
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
   /* line 857, ../sass/screen.scss */
+  a.lead-link {
+    font-size: 40px;
+  }
+
+  /* line 860, ../sass/screen.scss */
   .row {
     width: auto;
   }
-  /* line 859, ../sass/screen.scss */
+  /* line 862, ../sass/screen.scss */
   .row .item-4 {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  /* line 865, ../sass/screen.scss */
+  /* line 868, ../sass/screen.scss */
   .features__item {
     min-height: auto;
   }
-  /* line 867, ../sass/screen.scss */
+  /* line 870, ../sass/screen.scss */
   .features__item-content {
     margin-bottom: 135px;
   }
-  /* line 870, ../sass/screen.scss */
+  /* line 873, ../sass/screen.scss */
   .features__item img {
     width: 100%;
   }
 
-  /* line 875, ../sass/screen.scss */
+  /* line 878, ../sass/screen.scss */
   .title {
     font-size: 36px;
     line-height: 47px;
     padding-bottom: 10px;
   }
 
-  /* line 880, ../sass/screen.scss */
+  /* line 883, ../sass/screen.scss */
   .callback-info__nude {
     font-size: 22px;
     line-height: 36px;
     margin-top: 20px;
   }
 
-  /* line 886, ../sass/screen.scss */
+  /* line 889, ../sass/screen.scss */
   .callback-info .lead-link {
     margin-top: 20px;
   }
-  /* line 889, ../sass/screen.scss */
+  /* line 892, ../sass/screen.scss */
   .callback-info .btn {
     padding: 15px;
     margin-top: 30px;
   }
-  /* line 893, ../sass/screen.scss */
+  /* line 896, ../sass/screen.scss */
   .callback-info .title {
     width: 80%;
   }
 
-  /* line 897, ../sass/screen.scss */
+  /* line 900, ../sass/screen.scss */
   .recommend {
     display: none;
   }
 
-  /* line 901, ../sass/screen.scss */
+  /* line 904, ../sass/screen.scss */
   .promo .carousel-inner {
     max-height: 630px;
     min-height: inherit;
   }
-  /* line 904, ../sass/screen.scss */
+  /* line 907, ../sass/screen.scss */
   .promo .carousel-inner .item {
     min-height: 630px;
   }
-  /* line 907, ../sass/screen.scss */
+  /* line 910, ../sass/screen.scss */
   .promo .carousel-inner .fill {
     background-size: cover !important;
     min-height: 630px;
   }
-  /* line 913, ../sass/screen.scss */
+  /* line 916, ../sass/screen.scss */
   .promo__info {
     padding-top: 100px;
     width: 76%;
   }
-  /* line 917, ../sass/screen.scss */
+  /* line 920, ../sass/screen.scss */
   .promo__description {
     font-size: 20px;
   }
 
-  /* line 921, ../sass/screen.scss */
+  /* line 924, ../sass/screen.scss */
   .modal__description {
     font-size: 20px;
   }
 
-  /* line 924, ../sass/screen.scss */
+  /* line 927, ../sass/screen.scss */
   .inner {
     padding-top: 80px;
   }
-  /* line 927, ../sass/screen.scss */
+  /* line 930, ../sass/screen.scss */
   .inner .wrap .item-narrow {
     display: none;
   }
-  /* line 930, ../sass/screen.scss */
+  /* line 933, ../sass/screen.scss */
   .inner .wrap .item-hide {
     width: 100%;
     font-size: 16px;
   }
 
-  /* line 936, ../sass/screen.scss */
+  /* line 939, ../sass/screen.scss */
   .callback-info {
     padding: 100px 0;
   }
