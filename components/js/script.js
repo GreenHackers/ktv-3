@@ -1,38 +1,5 @@
-		// // плагин табов
-		// (function( $ ) {
-  // $.fn.customTabs = function() {
-  // 		   var createTabs = function(){
-  //           tabs = this;
-  //           i = 0;
-            
-  //           showPage = function(i){
-  //               $(tabs).find('.query-content').hide();
-  //               $(tabs).find('.query-content').eq(i).show();
-  //               $(tabs).find('.query-tabs').children("li").css('border-bottom-color', '#e1e1e1');
-  //               $(tabs).find('.query-tabs').children("li").eq(i).css('border-bottom-color', '#d4261b');
-  //           }
-                                
-  //           showPage(0);				
-            
-  //           $(tabs).find('.query-tabs').children('li').each(function(index, element){
-  //               $(element).attr("data-page", i);
-  //               i++;                        
-  //           });
-            
-  //           $(tabs).find('.query-tabs').children('li').click(function(){
-  //               showPage(parseInt($(this).attr("data-page")));
-  //           });				
-  //       };		
-  //       return this.each(createTabs);
-     
-
-  // 		};
-		// })(jQuery);
-
 
 $(document).ready(function(){
-	// // подключаю табы
-	//  $(".recommend").customTabs();
 	// слайдер в промоблоке
 	$('.promo__slider').carousel({
         interval: 5000 
@@ -115,8 +82,10 @@ $(document).ready(function(){
        		var elem = $('.main-nav');
 		if (top+h_mrg > h_hght) {
         	elem.css('background', 'rgba(0,0,0,0.7)');
+          elem.addClass('fixed')
        			} else {
-        	elem.css('background', 'rgba(0,0,0,0.0)');;
+        	elem.css('background', 'rgba(0,0,0,0.0)');
+          elem.removeClass('fixed');
        		}
      	});
    	});

@@ -133,12 +133,52 @@ a{
 		width: 80%;	
 	}
 }
+// меньшение меню при скроллинге
+
+.fixed{
+	.custom-icon {
+  	display: inline-block;
+  	width: 40px;
+  	height: 35px;
+  	background-image: url(../icons/sprite.png);
+  	background-size: 695% 110%;
+  	background-repeat: no-repeat;
+  	&--inet{
+  		background-position: -17px -4px;
+  	}
+  	&--tv{
+  		background-position: -64px -5px;
+  	}
+  	&--pack{
+  		background-position: -106px -2px;
+  	} 
+  	&--pay{
+  		background-position: -241px -2px;
+  	}
+  	 &--intercom{
+  		background-position: -195px 0px;
+  	}
+  	 &--skt{
+  		background-position: -149px 2px;
+  	}
+
+	}
+	.logo img{
+		height: 100px;	
+	}
+	
+}
+
 .custom-icon{
 	display: inline-block;	
 	width: 80px;
 	height: 70px;	
 	background-image: url(../icons/sprite.png);
 	background-repeat: no-repeat;
+	// -webkit-transition: all 0.5s ease;
+ //    -moz-transition: all 0.5s ease;
+ //    -o-transition: all 0.5s ease;
+ //     transition: all 0.5s ease;
 	&--inet{
 		  background-position: -39px -8px;
 	}
@@ -294,6 +334,10 @@ header{
 		max-height: 150px;
 		img{
 			max-height: 150px;
+		-webkit-transition: all 0.5s ease;
+     	-moz-transition: all 0.5s ease;
+     	-o-transition: all 0.5s ease;
+     	transition: all 0.5s ease;
 		}	
 	}
 	&__filter{
@@ -302,7 +346,11 @@ header{
 		min-width: 225px;
 		background:transparent url('../icons/sprite.png') right top no-repeat;
 		padding: 30px 0 30px 25px;
-		  background-position: 204px 25px;
+		 background-position: 204px 25px;
+		 -webkit-transition: all 0.5s ease;
+     	-moz-transition: all 0.5s ease;
+     	-o-transition: all 0.5s ease;
+     	transition: all 0.5s ease;
 		&-item{
 			font-size: 20px;
 			a, a:hover, a:active{
@@ -342,6 +390,17 @@ header{
 
 	
 }
+.main-nav.fixed{
+		max-height: 100px;
+		min-height: 100px;
+		.main-nav__filter{
+			padding: 15px 0px 15px 25px;
+  			background-position: 204px 9px;
+		}
+		.main-nav__list-item a{
+			font-size: 16px;
+		}
+	}
 // features
 .features{
 	color: 	#000;
@@ -779,54 +838,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
   	font-size: 30px;
   	color: #85C3BC;
 	}
+	.inner{
+		padding-top: 80px;
+	}
 }
 @media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px){
 	.features__item{
 		min-height: 725px;
-	}
-}
-
-@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px){
-	.custom-icon {
-  	display: inline-block;
-  	width: 40px;
-  	height: 35px;
-  	background-image: url(../icons/sprite.png);
-  	background-size: 695% 110%;
-  	background-repeat: no-repeat;
-  	&--inet{
-  		background-position: -17px -4px;
-  	}
-  	&--tv{
-  		background-position: -64px -5px;
-  	}
-  	&--pack{
-  		background-position: -106px -2px;
-  	} 
-  	&--pay{
-  		background-position: -241px -2px;
-  	}
-  	 &--intercom{
-  		background-position: -195px 0px;
-  	}
-  	 &--skt{
-  		background-position: -149px 2px;
-  	}
-
-	}
-	.logo img{
-		height: 100px;	
-	}
-	.main-nav{
-		max-height: 100px;
-		min-height: 100px;
-		&__filter{
-			padding: 15px 0px 15px 25px;
-  			background-position: 204px 9px;
-		}
-		&__list-item a{
-			font-size: 16px;
-		}
 	}
 }
 
