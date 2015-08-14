@@ -15,12 +15,12 @@
 	<link href="components/js/full-slider/css/full-slider.css" rel="stylesheet">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 	<script type="text/javascript" src="components/js/jquery-1.11.3.js"></script>
-	<script src="components/js/script.js"></script>
 	<script type="text/javascript" src="components/js/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="components/js/jquery.fancybox-buttons.js"></script>
 	<script src="components/js/full-slider/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="components/js/slick.js"></script>
 	<script type="text/javascript" src="components/js/pushy.js"></script>
+	<script src="components/js/script.js"></script>
 </head>
 <body>
 	<header>
@@ -196,7 +196,7 @@
 							<li>10-30  Мбит/с за <span class="mark">350</span> рублей</li>
 						</ul>
 						<p class="features__item-content">Качественный интернет за разумные деньги с внешним ip адресом.</p>
-						<a class="btn" href="">Подключиться</a>
+						<a class="btn modal-call2" href="#modalForm2">Подключиться</a>
 					</section>
 					</div>
 					<div class="item-4">
@@ -210,7 +210,7 @@
 						</ul>
 						<p class="features__item-content">Телевидение на все ТВ приемники и высокоскоростной интернет, который работает всегда, даже если забыли оплатить.</p>
 						<p class="features__item-small"> * Цена действительна для новых абонентов в течении первых 6и месяцев, с 7го месяца абонентская плата 450рублей</p>
-						<a class="btn" href="">Подключиться</a>
+						<a class="btn modal-call2" href="#modalForm2">Подключиться</a>
 					</section>
 					</div>
 					<div class="item-4">
@@ -223,7 +223,7 @@
 						</ul>
 						<p class="features__item-content">Телевидение на все ТВ приемники, цифровой ресивер для просмотра телевидения высокой четкости и высокоскоростной интернет, который работает всегда, даже если забыли оплатить.</p>
 						<p class="features__item-small"> * Цена действительна для новых абонентов в течении первых 6и месяцев, с 7го месяца абонентская плата 450рублей</p>
-						<a class="btn" href="">Подключиться</a>
+						<a class="btn modal-call2" href="#modalForm2">Подключиться</a>
 					</section>
 					</div>
 				</div>
@@ -238,14 +238,31 @@
 				<p class="callback-info__nude">Звоните прямо сейчас! Не откладывайте на завтра то, что можно </p>
 				<a  class="lead-link" href="tel:6771515"><i class="icon icon-phone"></i> 677 15 15</a>
 				<a href="#modalForm" class="modal-call btn">Заказать обратный звонок</a>
+				<div id="feedback_info">	
+					<div class="throw_error"></div>
+				</div>
+				<a href="#feedback_info" class="feedback_button"></a>
+
 				<div class="modal-form" id="modalForm">
     				<p class="modal__title">Оставьте заявку,</p>
     				<p class="modal__description">И наш спецалист свяжется с вами в ближайшее время</p>
     				<form>
-        				<input class="modal__input" type="text" placeholder="Имя">
-        				<input class="modal__input" type="taex" placeholder="Телефон">
-        				<input class="modal__input" type="email" placeholder="E-mail">
-        				<input class="modal__input--submit btn" type="submit" value="Заказать обратный звонок">
+        				<input class="modal__input" type="text" name="Feedback[name]" placeholder="Имя">
+        				<input class="modal__input" type="text" name="Feedback[telephone]" placeholder="Телефон">
+        				<input class="modal__input" type="email" name="Feedback[email]" placeholder="E-mail">
+        				<input class="modal__input--submit btn submit" type="submit" value="Заказать обратный звонок">
+    				</form>
+				</div>
+				<!--  -->
+				<div class="modal-form" id="modalForm2">
+    				<p class="modal__title">Оставьте заявку,</p>
+    				<p class="modal__description">И наш спецалист свяжется с вами в ближайшее время</p>
+    				<form>
+        				<input class="modal__input" type="text" name="product[name]" placeholder="Имя">
+        				<input class="modal__input" type="text" name="product[telephone]" placeholder="Телефон">
+        				<input class="modal__input" type="email" name="product[email]" placeholder="E-mail">
+        				<textarea class="modal__input" [name="product[text]" placeholder="Укажите название услуги, к которой желаете подключиться">	</textarea>
+        				<input class="modal__input--submit btn submit" type="submit" value="Подключиться">
     				</form>
 				</div>
 			</div>

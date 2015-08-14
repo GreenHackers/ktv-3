@@ -480,6 +480,12 @@ header{
 	}	
 }
 // callback-info
+#feedback_info{
+	display: none;
+}
+.feedback_button{
+	display: none;
+}
 .modal-form{
 		max-width: 490px;
 		display: none;	
