@@ -193,4 +193,21 @@ $(document).ready(function(){
         sentClientMsgToMail();
     });
 
+ // табы в пакетах
+    $('.packages__content').hide();
+    $('.packages__content').eq(0).fadeIn('slow');
+    $('.packages__tabs-item').eq(0).addClass('active');
+    $('.packages__tabs-item').click(function(){
+      if($(this).hasClass('active')){
+        return false;
+      } else {
+        var count = $(this).index();
+        $('.packages__tabs-item').removeClass('active');
+        $(this).addClass('active');
+        $('.packages__content').fadeOut('fast');
+        $('.packages__content').eq(count).delay(200).fadeIn('slow');
+      }
+    });
+
 });
+

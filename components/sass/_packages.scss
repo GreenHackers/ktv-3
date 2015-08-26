@@ -1,0 +1,128 @@
+// пакеты
+.packages{
+	color: #333333;
+	&__tabs-item, &__content-wrapper{
+		background-color: #ebebeb;
+	}
+	ul.packages__tabs{
+		padding-left: 0;	
+	}
+	&__tabs-item{
+		display: inline-block;	
+		min-width: 175px;
+		padding: 10px 30px 20px;	
+		text-align: center;
+		border-radius: 10px 10px 0 0;
+		position: relative;
+		top: 10px;
+		z-index: 1;
+		font-size: 20px;
+		cursor: pointer;
+		&.active{
+			color: #fff;
+			background-color: #ef3125;
+		}	
+	}
+	&__content-wrapper{
+		position: relative;
+		z-index: 2;
+		border-radius: 10px 10px 0 0;
+		border-top: 3px solid #ef3125;
+		box-sizing: border-box;
+		padding: 25px;		
+	}
+	&__content{
+		width: 100%;	
+		font-size: 0;
+	}
+	&__img{
+		display: inline-block;	
+		width: 30%;	
+		vertical-align: top;
+		text-align: center;	
+		img{
+			max-width: 100%;
+		}
+	}
+	&__info{
+		display: inline-block;	
+		width: 70%;	
+		font-size: 20px;
+		box-sizing: border-box;	
+		padding-left: 40px;	
+	}
+}
+.cart{
+	&__item-title{
+		font-size: 22px;	
+		font-weight: bold;
+		color: #000;
+	}
+	ul.cart__item-lead{
+		font-size: 22px;
+		border-bottom: 	1px solid #000;
+		list-style-type: none;
+		padding-left: 0;
+		margin-bottom: 10px;	
+		li{
+			list-style-type: none;	
+		}	
+	}
+	&-text{
+		font-size: 18px;
+		min-height: 75px;
+	}
+	&__item-nude{
+		font-size: 12px;
+		margin-top: 10px;		
+	}
+	&__btn.btn{
+		color: #2f2f2f;
+		margin-top: 10px;	
+		&:hover, &:active{
+			color: #ef3125;
+			border-color: #ef3125;
+		}
+	}
+}
+@media(max-width: 900px){
+	.packages{
+		&__img{
+			width: 100%;	
+		}
+		&__info{
+			width: 100%;
+			padding-left: 0;		
+		}
+		a.btn.cart__btn{
+			display: block;	
+			text-align: center;
+    		padding-left: 0;
+    		padding-right: 0;
+		}
+
+	}
+}
+@media (min-width: 768px) and (max-width: 900px){
+		.packages__tabs-item{
+			min-width: auto;
+			padding-left: 15px;	
+			padding-right: 15px;	
+		} 	
+}
+@media (max-width: 767px){
+		.packages__tabs-item{
+			min-width: 100%;
+			box-sizing: border-box;	
+			padding-left: 30px;	
+			padding-right: 30px;
+			border-radius: 0;
+			&:first-child{
+				border-radius: 	10px 10px 0 0;
+			}	
+		} 
+		.inner__box{
+			padding-left: 5px;	
+			padding-right: 5px;	
+		}	
+}

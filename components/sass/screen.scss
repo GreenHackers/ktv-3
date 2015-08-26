@@ -15,6 +15,7 @@
 @import "normalize";
 // slicknav style
 @import "pushy";
+
 // base
 html, body {
 	width:100%;
@@ -741,7 +742,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3125', end
 }
 // inner
 .inner{
-	min-height: 900px;
 	padding-top: 245px;
 	padding-bottom: 40px;	
 	box-sizing: border-box;	
@@ -966,5 +966,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 	}
 
 }
+@import "packages";
 
 
