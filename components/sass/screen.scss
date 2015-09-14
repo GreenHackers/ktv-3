@@ -133,6 +133,22 @@ a{
 	.item-hide{
 		width: 80%;	
 	}
+	 @media (min-width: 951px) {
+	 	.item-lg-half{
+	 		width: 50%;
+	 	}
+	 	.item-lg-full{
+	 		width: 100%;
+	 	}
+	 }
+	@media (max-width: 950px) {
+	 	.item-sm-half{
+	 		width: 50%;
+	 	}
+	 	.item-sm-full{
+	 		width: 100%;
+	 	}
+	 }
 }
 // меньшение меню при скроллинге
 
@@ -755,7 +771,116 @@ background: -webkit-linear-gradient(-45deg,  rgba(24,108,118,1) 0%,rgba(200,167,
 background: -o-linear-gradient(-45deg,  rgba(24,108,118,1) 0%,rgba(200,167,97,1) 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(-45deg,  rgba(24,108,118,1) 0%,rgba(200,167,97,1) 100%); /* IE10+ */
 background: linear-gradient(135deg,  rgba(24,108,118,1) 0%,rgba(200,167,97,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', endColorstr='#c8a761',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', endColorstr='#c8a761',GradientType=1 ); /* IE6-8 fallback on 
+horizontal gradient */
+	&__title{
+		font-size: 22px;
+		font-family: Arial;
+		font-weight: bold;
+	}
+	&__product{
+		font-size: 0;
+		background-color: #ebebeb;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		&__img{
+			display: inline-block;
+			width: 40%;
+			height: 100%;	
+			min-height: 170px;
+			&_mouse{
+			background: transparent url("../img/mouse.png") 180% center no-repeat;
+    		background-size: 120%;
+			}
+			&_ball{
+			    background: transparent url("../img/ball.png") 180% 0 no-repeat;
+			background-size: 120%;
+			}
+			&_pack{
+			background: transparent url("../img/pack.png") -123% -14% no-repeat;
+    		background-size: 90%;
+		}
+	}
+		&__info{
+			width: 60%;
+			display: inline-block;
+			font-size: 22px;
+			vertical-align: top;	
+		}
+		&__title{
+		font-weight: bold;
+    	font-size: 22px;
+    	font-family: Arial;
+    	margin-bottom: 10px;
+    	margin-top: 15px;
+		}
+			&_lead{
+			background-color: #ef3125;
+			color: #fff;
+
+			.mark{
+				color: #fff;
+				font-weight: bold;
+			}
+			.inner__product__img{
+				width: 160px;
+			}
+			.inner__product__info{
+				    width: 250px;
+    				font-size: 22px;
+    				box-sizing: border-box;
+    				padding-left: 10px;
+    				padding-right: 10px;
+			}
+			.inner__product__extra{
+    			width: 412px;
+    			font-size: 22px;
+    			display: inline-block;
+    			vertical-align: top;
+    			box-sizing: border-box;
+    			padding: 20px;
+				&-box{
+					border: 1px solid #ffffff;
+					box-sizing: border-box;	
+					padding-top: 20px;	
+					padding-bottom: 20px;
+					padding-left: 20px;	
+					padding-right: 20px;		
+					text-align: center;	
+					opacity: 0;				
+	-webkit-transition: all 1.5s ease-out 0.5s;
+     -moz-transition: all 1.5s ease-out 0.5s;
+     -o-transition: all 1.5s ease-out 0.5s;
+     transition: all 1.5s ease-out 0.5s;
+				}
+
+			}
+
+		}
+
+
+	}
+	&__product_lead-wrapper{
+				height: 170px;	
+				width: 50%;	
+				border-radius: 	10px;
+				box-sizing: border-box;	
+				overflow: hidden;
+	-webkit-transition: all 0.5s ease-out;
+     -moz-transition: all 0.5s ease-out;
+     -o-transition: all 0.5s ease-out;
+     transition: all 0.5s ease-out;
+				&:hover{
+					width: 100%;	
+					.inner__product__extra-box{
+						opacity: 1;
+						-webkit-transition-delay: 0s;
+						-moz-transition-delay: 0s;
+						-o-transition-delay: 0s;
+						transition-delay: 0s;
+					}
+				}	
+			}
 	&__box{
 		background-color: #fff;
 		color:#000;
@@ -965,6 +1090,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#186c76', end
 		padding: 100px 0;	
 	}
 
+}
+
+@media (max-width: 1050px){
+	.inner__product_lead-wrapper{
+		width: 100%;	
+	}
+	.inner__product_lead .inner__product__info{
+		width: 60%;	
+		font-size: 18px;	
+	}
+	.inner__product_lead .inner__product__img{
+		width: 40%;	
+	}
+	.inner__product_lead .inner__product__extra{
+		display: none;	
+	}
+	.inner__product__title{
+		font-size: 18px;	
+	}
+	.inner__product__info{
+		font-size: 18px;	
+	}
 }
 @import "packages";
 
